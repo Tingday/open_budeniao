@@ -1,0 +1,2 @@
+DATE=`date +'%Y%m%d'`
+cp taobaokesql.db backup/taobaokesql.db.$DATE

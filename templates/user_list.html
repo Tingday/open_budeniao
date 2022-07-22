@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-image: -webkit-linear-gradient(#679dee, #c1c5f0);
+        }
+
+        .content {
+            width: 100%;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .content::after {
+            background-color: white;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+            -webkit-filter: blur(20px);
+            -moz-filter: blur(20px);
+            -ms-filter: blur(20px);
+            -o-filter: blur(20px);
+            filter: blur(20px);
+        }
+
+        .title {
+            font-size: 24px;
+            color: #679dee;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .user{
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+            background-color: #ffffe0;
+        }
+        .openid{
+            font-size: small;
+        }
+        .xingming{
+            
+        }
+        .orders{
+            font-size: small;
+            float:left;
+        }
+        .remain{
+            font-size: small;
+            margin-left:50%;
+        }
+        .lastdate{
+            font-size: small;
+        }
+        .footer{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">{{ title }}</div>
+        <div class="list">
+            {% for user in user_list %}
+            <div class="user">
+                <div class="xingming"><a href="../user_info?openid={{ user.openid }}">{{ user.xingming }}</a></div>
+                <div class = "orders">订单数：{{ user.orders }}</div>
+                <div class = "remain">红包：{{ user.remain }}</div>
+                <div class = "lastdate">时间：{{ user.lastdate }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="footer">生活就像海洋，只有意志坚强的人才能到达彼岸<br \> ——马克思</div>
+    </div>
+</body>
+
+</html>

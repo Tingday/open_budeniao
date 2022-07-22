@@ -1,0 +1,2 @@
+uwsgi3 --stop uwsgi.pid
+uwsgi3 --ini uwsgi.ini

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div ><br></div>
+<h3 class="form-signin-heading">{{ title }}</h3>
+    <form class="form-signin" action="http://wx.budeniao.net/alipay" method="GET">
+    <label for="input" class="sr-only">手机号码</label>
+    <input type="tel" name="zhifubao" class="form-control" placeholder="手机号码" required autofocus>
+    <br>
+    <label for="input" class="sr-only">姓名</label>
+    <input type="text" name="xingming" class="form-control" placeholder="姓名" required>
+    <br>
+    <button class="btn btn-lg btn-success btn-block" type="submit">提交绑定</button>
+    <input id="js_openid" type="hidden" name="openid" value="{{ openid }}">
+    </form>
+</div>
+</body>
+</html>

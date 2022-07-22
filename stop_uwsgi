@@ -1,0 +1,1 @@
+uwsgi3 --stop ./uwsgi.pid

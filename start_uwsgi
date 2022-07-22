@@ -1,0 +1,1 @@
+uwsgi3 --ini uwsgi.ini -d log.txt

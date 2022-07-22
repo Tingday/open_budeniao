@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-image: -webkit-linear-gradient(#679dee, #c1c5f0);
+            background-attachment：fixed;
+            background-repeat: no-repeat;
+            background-size:100% 100%;
+        }
+
+        .content {
+            width: 100%;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .content::after {
+            background-color: white;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+            -webkit-filter: blur(20px);
+            -moz-filter: blur(20px);
+            -ms-filter: blur(20px);
+            -o-filter: blur(20px);
+            filter: blur(20px);
+        }
+
+        .title {
+            font-size: 24px;
+            color: #679dee;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .order {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+            background-color: #ffffe0;
+        }
+        .create_time{
+            margin-right: 50%;
+            font-size: small;
+        }
+        .order_user{
+            margin-right: 50%;
+            font-size: small;
+        }
+        .tk_status{
+            font-size: small;
+        }
+        .order_rebate{
+            font-size: small;
+        }
+        .footer{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">{{ title }}</div>
+        <div class="list">
+            {% for order in orders %}
+            <div class="order">
+                <div class="order_title">{{ order.item_title }}</div>
+                <div class="order_user">&#9924;{{ order.user_name }}</div>
+                <div class="order_rebate">红包：{{ order.pub_share_pre_fee }}元</div>
+                <div class="create_time">{{ order.create_time }}</div>
+                <div class="tk_status">状态：{{ order.tk_status }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="footer">生活就像海洋，只有意志坚强的人才能到达彼岸<br \> ——马克思</div>
+    </div>
+</body>
+
+</html>
